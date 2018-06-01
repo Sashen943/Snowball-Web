@@ -1,0 +1,62 @@
+
+<!-- new user sign up -->
+<form [formGroup]="userForm"  *ngIf="newUser"  (ngSubmit)="signup()">
+    <img class="logo" src="../../../assets/dvt_logo.png"/>
+
+    <label for="email">Please provide an email and password to sign up with</label>
+    <hr/>
+    <input type="email" id="email" class="input"
+           formControlName="email" required autocomplete="new-password">
+
+    <div *ngIf="formErrors.email" class="notification is-danger">
+      {{ formErrors.email }}
+    </div>
+    <input type="password" id="password" class="input"
+           formControlName="password" required >
+
+    <div *ngIf="formErrors.password" class="notification is-danger">
+      {{ formErrors.password }}
+    </div>
+
+
+    <button type="submit" class="button" [disabled]="!userForm.valid">Sign up</button>
+
+    <hr/>
+    <a class="help is-info"  (click)="toggleForm()">Already Registered?</a>
+
+  </form>
+
+  <!-- existing user login -->
+<form [formGroup]="userForm" *ngIf="!newUser"  (ngSubmit)="login()">
+
+  <img class="logo" src="../../../assets/dvt_logo.png"/>
+
+
+  <input type="email" id="email" class="input"
+         formControlName="email" required autocomplete="new-password" placeholder="Email">
+
+  <div *ngIf="formErrors.email" class="help is-danger">
+    {{ formErrors.email }}
+  </div>
+
+
+  <input type="password" id="password" placeholder="Password" class="input"
+         formControlName="password" required autocomplete="new-password">
+
+  <div *ngIf="formErrors.password" class="help is-danger">
+    {{ formErrors.password }}
+  </div>
+
+  <button type="submit" class="button" [disabled]="!userForm.valid">Login</button>
+
+  <span *ngIf="userForm.valid" class="help is-success">Form Looks Valid</span>
+
+  <a  class="help is-info" (click)="resetPassword()">Reset Password for {{userForm.value.email}}?</a>
+  <p *ngIf="passReset" class="help is-info">Reset requested. Check your email instructions.</p>
+
+<hr/>
+<a class="help is-info" (click)="toggleForm()">New User?</a>
+</form>
+
+
+

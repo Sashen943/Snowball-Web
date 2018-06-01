@@ -1,0 +1,22 @@
+
+<div>
+  <main-nav></main-nav>
+</div>
+<div class="card">
+  <form [formGroup]="userForm"  (ngSubmit)="signup()">
+  <img src="../../../assets/user_avatar.png" alt="avatar" style="width:100%"/>
+  <input type="email" id="email" class="input"
+  formControlName="email" required autocomplete="new-password" placeholder="Email"/>
+  <div *ngIf="formErrors.email" class="help is-danger">
+      {{ formErrors.email }}
+    </div>
+  <input type="password" id="password" placeholder="Password" class="input"
+         formControlName="password" required autocomplete="new-password">
+  <input type="password" id="confirm_password" placeholder="Confirm password" class="input"
+         formControlName="password" required autocomplete="new-password">
+  <div *ngIf="formErrors.password" class="help is-danger">
+      {{ formErrors.password }}
+  </div>
+ <p><button type="submit">Add user</button></p>
+</form>
+</div>

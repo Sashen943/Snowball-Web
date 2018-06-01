@@ -1,0 +1,39 @@
+
+<header class="nav_header">
+  <main-nav></main-nav>
+</header>
+<div class="row">
+    <div class="column"></div>
+    <div class="column" style="text-align: center"> <img src="../../../assets/dvt_logo.png" alt="Avatar" style="width:70%"/></div>
+    <div class="column"></div>
+</div>
+
+<div class="row">
+
+    <div class="column">
+        <div (click)="moveToAdd()" class="card">
+            <img  src="../../../assets/images/people.jpg" alt="Avatar" style="width:100%">
+            <div class="container">
+                <h1>Create a user</h1>
+              </div>
+          </div>
+    </div>
+    <div class="column">
+      <!--delete user-->
+
+      <div (click)="moveToDelete()" class="card">
+          <img  src="../../../assets/images/burn.jpg" alt="Avatar" style="width:100%">
+          <div class="container">
+            <a><h1>Delete a user</h1></a>
+          </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <img  src="../../../assets/images/cogs.jpg" alt="Avatar" style="width:100%">
+            <div class="container">
+                <a><h1>Settings</h1></a>
+            </div>
+          </div>
+    </div>
+  </div>

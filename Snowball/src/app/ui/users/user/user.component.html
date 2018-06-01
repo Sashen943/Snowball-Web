@@ -1,0 +1,19 @@
+<form [formGroup]="userForm"    (ngSubmit)="onSubmit(userForm)">
+    <img class="logo" src="../../../assets/dvt_logo.png"/>
+
+    <label for="email">Please provide an email and password to sign up with</label>
+    <hr/>
+    <input type="email" id="email" class="input"
+           formControlName="email" required autocomplete="new-password">
+    <input type="password" id="password" class="input"
+           formControlName="password" required >
+    <input type="admin" id="admin" class="input"
+           formControlName="admin" required >
+    <input type="active" id="active" class="input"
+           formControlName="active" required >
+    <button type="submit" class="button" >Create user</button>
+
+    <hr/>
+
+
+  </form>
